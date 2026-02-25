@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Story Script", sans-serif;
+}
+body{
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+/* base du site */
+.container{
+    width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* border: solid 1px black; */
+}
+
+svg.fond{
+    width: 100vw;
+    height: 50vh;
+    justify-items: center;
+    position: relative;
+    bottom: 0;
+    float:inline-end;
+    z-index: 1;
+}
+g{
+    fill: rgba(255, 196, 10, 1);
+}
+svg.reverse{
+    position: relative;
+    top: 0;
+    transform: rotate(180deg);
+}
+
+/* code navbar */
+.navbar{
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+    z-index: 100;
+    /* border: solid 1px red; */
+}
+
+/* cards (exemple)*/
+.card{
+    width: 250px;
+    height: auto;
+    border: solid 2px black;
+    border-radius: 15px;
+    z-index: 100;
+    position: absolute;
+    padding: 7.5px;
+    justify-self: center;
+    box-shadow: 7px 7px 1px;
+}
+p.titre{
+    justify-self: center;
+    text-align: center;
+    margin: 15px 5px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+p.car-paragraphe{
+    text-align: justify;
+    font-size: 17px
+}
