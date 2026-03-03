@@ -18,6 +18,7 @@ body {
     height: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
     /* border: solid 1px black; */
 }
 
@@ -84,10 +85,15 @@ svg.reverse {
     border-radius: 15px;
     z-index: 100;
     position: absolute;
-    padding: 7.5px;
-    justify-self: right;
-    box-shadow: 10px 10px 10px;
-    right: 20px; 
+    padding: 15px; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+    
+    /*  POSITIONNEMENT  */
+    right: 50px; 
+    top: 150px;  
+    
+    /*  LISIBILITÉ  */
+    background-color: white; 
 }
 
 p.titre {
@@ -101,4 +107,75 @@ p.titre {
 p.car-paragraphe {
     text-align: justify;
     font-size: 17px;
+}
+/* NOUVELLE SECTION : AGENDA DES FESTIVALS */
+
+/* Le grand titre au centre */
+.section-titre {
+    text-align: center;
+    font-size: 45px;
+    margin: 40px 0;
+    color: black;
+}
+
+/* La grille qui s'adapte toute seule (magie CSS Grid) */
+.agenda-grid {
+    display: grid;
+    /* Crée des colonnes d'au moins 300px, et en met autant que possible sur la ligne */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /
+    padding: 0 50px 80px 50px; 
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* Le design des nouvelles cartes de festival */
+.festival-card {
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 25px;
+    /* Une ombre jaune décalée pour un effet rétro/BD super sympa */
+    box-shadow: 10px 10px 0px rgba(255, 196, 10, 1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Petit effet quand on passe la souris sur une carte */
+.festival-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 15px 15px 0px rgba(255, 196, 10, 1); 
+}
+
+/* Les textes dans la carte */
+.festival-date {
+    color: #d35400; 
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.festival-titre {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Le bouton de réservation */
+.btn-reserver {
+    display: inline-block; 
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(255, 196, 10, 1); 
+    color: black;
+    text-decoration: none;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Effet du bouton au survol */
+.btn-reserver:hover {
+    background-color: black;
+    color: white;
 }
