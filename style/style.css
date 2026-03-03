@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Story Script", sans-serif;
+    font-family: "Story Script", cursive, sans-serif;
 }
-body{
+
+body {
     max-width: 100vw;
     overflow-x: hidden;
 }
-/* base du site */
-.container{
+
+/* --- Base du site --- */
+.container {
     width: 100vw;
     max-width: 100vw;
     height: 100%;
@@ -19,35 +21,63 @@ body{
     /* border: solid 1px black; */
 }
 
-svg.fond{
+svg.fond {
     width: 100vw;
     height: 50vh;
     justify-items: center;
     position: relative;
     bottom: 0;
-    float:inline-end;
+    float: inline-end;
     z-index: 1;
 }
-g{
+
+g {
     fill: rgba(255, 196, 10, 1);
 }
-svg.reverse{
+
+svg.reverse {
     position: relative;
     top: 0;
     transform: rotate(180deg);
 }
 
-/* code navbar */
-.navbar{
+/* --- Code Navbar --- */
+.navbar {
     position: fixed;
-    padding: 10px;
+    padding: 10px 20px; 
     width: 100%;
     z-index: 100;
-    /* border: solid 1px red; */
+    /* border: solid 1px red; */ 
+    
+    /* Flexbox pour écarter le logo à gauche et le menu à droite */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
 }
 
-/* cards (exemple)*/
-.card{
+/* Code Menu */
+.menu {
+    display: flex;
+    gap: 30px; 
+    padding-right: 20px; 
+}
+
+/* Style des liens du menu */
+.menu a {
+    text-decoration: none; 
+    color: black;          
+    font-size: 26px;       
+    font-weight: bold;
+    transition: transform 0.2s ease; 
+}
+
+/* Effet quand la souris passe sur un lien */
+.menu a:hover {
+    transform: scale(1.1); 
+}
+
+/* --- Cards (exemple) --- */
+.card {
     width: 250px;
     height: auto;
     border: solid 2px black;
@@ -55,17 +85,20 @@ svg.reverse{
     z-index: 100;
     position: absolute;
     padding: 7.5px;
-    justify-self: center;
-    box-shadow: 7px 7px 1px;
+    justify-self: right;
+    box-shadow: 10px 10px 10px;
+    right: 20px; 
 }
-p.titre{
+
+p.titre {
     justify-self: center;
     text-align: center;
     margin: 15px 5px;
     font-weight: bolder;
     font-size: 20px;
 }
-p.car-paragraphe{
+
+p.car-paragraphe {
     text-align: justify;
-    font-size: 17px
+    font-size: 17px;
 }
