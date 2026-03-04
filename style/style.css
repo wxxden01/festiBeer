@@ -110,72 +110,165 @@ p.car-paragraphe {
 }
 /* NOUVELLE SECTION : AGENDA DES FESTIVALS */
 
+.section-titre {
+    text-align: center;
+    font-size: 55px; /* Un peu plus grand pour l'effet BD */
+    margin: 60px 0;
+    color: black;
+    text-shadow: 4px 4px 0px rgba(255, 196, 10, 1); /* Ombre jaune décalée sur le titre */
+}
+
+/* On utilise Flexbox pour que les cartes se placent naturellement */
+.agenda-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne sur petit écran */
+    justify-content: center; /* Centre le tout */
+    gap: 60px; /* Beaucoup d'espace pour laisser respirer les rotations */
+    padding: 20px 50px 100px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* La base de la carte Cartoon */
+.festival-card {
+    width: 320px; /* Une largeur fixe pour faire de belles "boîtes" */
+    background-color: white;
+    border: 4px solid black; /* Bordure TRES épaisse façon Comic book */
+    border-radius: 20px;     /* Bords bien arrondis */
+    padding: 30px;
+    /* L'OMBRE CARTOON : zéro flou, un gros décalage net ! */
+    box-shadow: 12px 12px 0px black; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation effet "ressort" */
+}
+
+/* --- LA MAGIE POUR CASSER L'EFFET COLONNE --- */
+/* On incline et on colore chaque carte différemment ! */
+
+.festival-card:nth-child(1) {
+    transform: rotate(-4deg); /* Penche à gauche */
+    background-color: #fff9e6; /* Fond très légèrement jaune */
+}
+
+.festival-card:nth-child(2) {
+    transform: rotate(3deg) translateY(40px); /* Penche à droite ET descend un peu ! */
+    background-color: #e6f7ff; /* Fond très légèrement bleu */
+}
+
+.festival-card:nth-child(3) {
+    transform: rotate(-2deg) translateY(-20px); /* Penche à gauche et monte un peu ! */
+    background-color: #ffe6e6; /* Fond très légèrement rouge/rose */
+}
+
+/* L'effet quand on passe la souris : la carte "saute" vers toi */
+.festival-card:hover {
+    transform: scale(1.05) rotate(0deg) translateY(-10px) !important; 
+    box-shadow: 16px 16px 0px rgba(255, 196, 10, 1); /* L'ombre devient jaune ! */
+    z-index: 10; /* Passe par dessus les autres */
+}
+
+/* Les textes à l'intérieur */
+.festival-date {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    transform: rotate(-2deg); /* Même la date a l'air d'un sticker collé ! */
+}
+
+.festival-titre {
+    font-size: 35px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+/* Le bouton d'action Cartoon */
+.btn-reserver {
+    display: block; /* Prend toute la largeur */
+    text-align: center;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background-color: rgba(255, 196, 10, 1);
+    color: black;
+    text-decoration: none;
+    border: 3px solid black;
+    border-radius: 12px;
+    font-size: 24px;
+    box-shadow: 4px 4px 0px black; /* Mini ombre dure pour le bouton */
+    transition: all 0.2s ease;
+}
+
+/* Effet quand on clique sur le bouton (il s'enfonce) */
+.btn-reserver:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px black;
+}
+/* SECTION LE SAVIEZ-VOUS ? (CARTOON)*/
+
+.saviez-vous {
+    background-color: white; 
+    padding: 60px 20px 80px 20px; 
+}
+
 /* Le grand titre au centre */
 .section-titre {
     text-align: center;
     font-size: 45px;
-    margin: 40px 0;
+    margin-bottom: 50px;
     color: black;
 }
 
 /* La grille qui s'adapte toute seule (magie CSS Grid) */
-.agenda-grid {
+.saviez-vous-grid {
     display: grid;
     /* Crée des colonnes d'au moins 300px, et en met autant que possible sur la ligne */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px; /
-    padding: 0 50px 80px 50px; 
+    gap: 40px; 
     max-width: 1200px;
     margin: 0 auto; 
 }
 
 /* Le design des nouvelles cartes de festival */
-.festival-card {
-    background-color: white;
-    border: solid 2px black;
-    border-radius: 15px;
+.saviez-vous-card {
+    background-color: #fff; 
+    border: solid 2px black; 
+    border-radius: 15px;     
     padding: 25px;
-    /* Une ombre jaune décalée pour un effet rétro/BD super sympa */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    /* Une ombre jaune décalée et dure (zéro flou) pour un effet cartoon instantané */
     box-shadow: 10px 10px 0px rgba(255, 196, 10, 1); 
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Petit effet quand on passe la souris sur une carte */
-.festival-card:hover {
-    transform: translateY(-10px);
+/* Effet quand on passe la souris sur une carte */
+.saviez-vous-card:hover {
+    transform: translateY(-8px) scale(1.02); 
     box-shadow: 15px 15px 0px rgba(255, 196, 10, 1); 
+    z-index: 10;
 }
 
-/* Les textes dans la carte */
-.festival-date {
-    color: #d35400; 
+/* Le gros chiffre jaune du record */
+.record-chiffre {
+    font-size: 70px; 
     font-weight: bold;
-    font-size: 22px;
+    color: rgba(255, 196, 10, 1); 
     margin-bottom: 10px;
+    line-height: 1; 
+    text-shadow: 3px 3px 0px black; 
 }
 
-.festival-titre {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-/* Le bouton de réservation */
-.btn-reserver {
-    display: inline-block; 
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: rgba(255, 196, 10, 1); 
+/* Le texte de description dans la carte */
+p.record-texte {
+    font-size: 19px;
     color: black;
-    text-decoration: none;
-    border: solid 2px black;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 22px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-/* Effet du bouton au survol */
-.btn-reserver:hover {
-    background-color: black;
-    color: white;
+    line-height: 1.4;
+    text-align: justify; 
+    font-weight: bold; 
 }
