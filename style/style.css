@@ -21,6 +21,7 @@ body{
     height: 100%;
     min-height: 100vh;
     align-content: center;
+    /* border: solid 15px black; */
 }
 
 /* pour les SVG */
@@ -33,13 +34,26 @@ svg.fond{
     z-index: 1;
     opacity: 0.8;
 }
+svg.normal, svg.reverse2{
+    opacity: 1;
+}
 svg.normal{
-    bottom: 0;
+    bottom: -1px;
     /* left: 0; */
 }
 svg.reverse{
     top: -1px;
     transform: rotate(180deg);
+}
+svg.reverse2{
+    transform: rotate(180deg);
+    z-index: -1;
+
+    background: linear-gradient(
+  to bottom,
+  #fff 0%,
+  rgba(255, 196, 10, 1) 100%
+);
 }
 g.wave{
     fill: rgba(255, 196, 10, 1);
@@ -60,6 +74,20 @@ svg.man-beer{
 g.man-beer{
     fill: gray;
 }
+
+/* SVG beers */
+svg.svg-beers{
+    width: auto;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
+g.g-beers{
+    fill: gray;
+}
+
+/* Vidéo en fond */
 .bg-video{
     position: absolute;
     height: 100vh;
@@ -75,7 +103,7 @@ g.man-beer{
     font-size: 35px;
 }
 .title-page > h1{
-    font-size: 70px;
+    font-size: 100px;
     z-index: 10000;
 }
 
@@ -91,6 +119,10 @@ g.man-beer{
     display: flex;
     justify-content: space-between; 
     align-items: center; 
+
+    /* background-color: gray transparent;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
 }
 
 /* Code Menu */
@@ -112,10 +144,10 @@ g.man-beer{
 /* Effet quand la souris passe sur un lien */
 .menu a:hover {
     transform: scale(1.1); 
+    text-decoration: underline;
 }
 
 /* NOUVELLE SECTION : AGENDA DES FESTIVALS */
-
 .section-titre {
     text-align: center;
     font-size: 55px; /* Un peu plus grand pour l'effet BD */
@@ -137,8 +169,7 @@ g.man-beer{
 
 /* La base de la carte Cartoon */
 .festival-card {
-    width: 320px; /* Une largeur fixe pour faire de belles "boîtes" */
-    background-color: white;
+    width: 320px; /* Une largeur fixe pour faire de belles "boîtes" */  
     border: 4px solid black; /* Bordure TRES épaisse façon Comic book */
     border-radius: 20px;     /* Bords bien arrondis */
     padding: 30px;
@@ -214,10 +245,8 @@ g.man-beer{
 /* SECTION LE SAVIEZ-VOUS ? (CARTOON)*/
 
 .saviez-vous {
-    background-color: white; 
     padding: 60px 20px 80px 20px; 
 }
-
 /* Le grand titre au centre */
 .section-titre {
     text-align: center;
@@ -252,14 +281,15 @@ g.man-beer{
     
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Effet quand on passe la souris sur une carte */
-.saviez-vous-card:hover {
-    transform: translateY(-8px) scale(1.02); 
-    box-shadow: 15px 15px 0px rgba(255, 196, 10, 1); 
-    z-index: 10;
+.saviez-vous-card:nth-child(1){
+    transform: rotate(4deg);
 }
-
+.saviez-vous-card:nth-child(2){
+    transform: rotate(-1deg) translateY(15px);
+}
+.saviez-vous-card:nth-child(3){
+    transform: rotate(-4deg) translateY(-15px);
+}
 /* Le gros chiffre jaune du record */
 .record-chiffre {
     font-size: 70px; 
