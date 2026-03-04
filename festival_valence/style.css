@@ -1,0 +1,37 @@
+/* 1. Appliquer le jaune du Wave.svg à toutes les vagues */
+g {
+    fill: #ffc40a; 
+}
+
+/* 2. Style Cartoon pour les Cartes (festival-card et saviez-vous-card) */
+.festival-card, .saviez-vous-card {
+    background-color: white;
+    border: solid 3px black; 
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 8px 8px 0px black; 
+}
+
+/* 3. Style Cartoon pour les Titres dans les cartes */
+.festival-titre {
+    text-shadow: 2px 2px 0 #ffc40a, -1px -1px 0 black; 
+    margin-bottom: 10px;
+}
+
+/* 4. Style Cartoon pour le Bouton de Réservation */
+.btn-reserver {
+    text-decoration: none;
+    background-color: #ffc40a;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px black;
+    transition: all 0.1s;
+}
+
+.btn-reserver:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px black;
+}
