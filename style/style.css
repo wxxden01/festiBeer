@@ -46,19 +46,20 @@ g.wave{
     stroke:black;
     stroke-width: 20px;
 }
-g.man-beer{
-    fill: gray;
-}
 
 /* SVG p2 man-beer */
 svg.man-beer{
-    width: 50vw;
-    height: auto;
+    /* width: 50vw;
+    height: auto; */
+    width: auto;
+    height: 100%;
     right: 0;
     position: absolute;
     z-index: -1;
 }
-
+g.man-beer{
+    fill: gray;
+}
 .bg-video{
     position: absolute;
     height: 100vh;
