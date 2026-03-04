@@ -16,48 +16,51 @@ body{
     height: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    /* border: solid 1px black; */
 }
 
+/* pour les SVG */
+
+/* wave */
 svg.fond{
-    width: 100vw;
-    height: 50vh;
-    justify-items: center;
-    position: relative;
-    bottom: 0;
-    float:inline-end;
+    width: 100%;
+    height: 30vh;
+    position: absolute;
     z-index: 1;
+    opacity: 0.8;
 }
-g{
+.normal{
+    bottom: 0;
+    /* left: 0; */
+}
+g.wave{
     fill: rgba(255, 196, 10, 1);
+    stroke:black;
+    stroke-width: 20px;
+}
+g.man-beer{
+    fill: black;
 }
 svg.reverse{
-    position: relative;
-    top: 0;
+    top: -1px;
     transform: rotate(180deg);
 }
 
+/* SVG p2 man-beer */
+svg.man-beer{
+    width: 50vw;
+    height: auto;
+    right: 0;
+    position: absolute;
+}
 /* code navbar */
 .navbar{
     position: fixed;
     padding: 10px;
     width: 100%;
-    z-index: 100;
+    z-index: 10;
     /* border: solid 1px red; */
 }
 
-/* cards (exemple)*/
-.card{
-    width: 250px;
-    height: auto;
-    border: solid 2px black;
-    border-radius: 15px;
-    z-index: 100;
-    position: absolute;
-    padding: 7.5px;
-    justify-self: center;
-    box-shadow: 7px 7px 1px;
-}
 p.titre{
     justify-self: center;
     text-align: center;
@@ -68,4 +71,23 @@ p.titre{
 p.car-paragraphe{
     text-align: justify;
     font-size: 17px
+}
+
+.bg-video{
+    position: absolute;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.title-page{
+    width: 100%;
+    height: 100vh;
+    align-content: center;
+    justify-items: center;
+    font-size: 35px;
+}
+.title-page > h1{
+    font-size: 70px;
+    z-index: 10000;
 }
