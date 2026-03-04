@@ -16,11 +16,19 @@ body{
     height: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+<<<<<<<<< Temporary merge branch 1
+    position: relative;
+    /* border: solid 1px black; */
 }
-.content{
-    height: 100%;
-    min-height: 100vh;
-    align-content: center;
+
+svg.fond {
+    width: 100vw;
+    height: 50vh;
+    justify-items: center;
+    position: relative;
+    bottom: 0;
+    float: inline-end;
+=========
 }
 
 /* pour les SVG */
@@ -33,13 +41,13 @@ svg.fond{
     z-index: 1;
     opacity: 0.8;
 }
-svg.normal{
+<<<<<<<<< Temporary merge branch 1
+
+g {
+=========
+.normal{
     bottom: 0;
     /* left: 0; */
-}
-svg.reverse{
-    top: -1px;
-    transform: rotate(180deg);
 }
 g.wave{
     fill: rgba(255, 196, 10, 1);
@@ -55,32 +63,10 @@ svg.man-beer{
     height: 100%;
     right: 0;
     position: absolute;
-    z-index: -1;
 }
-g.man-beer{
-    fill: gray;
-}
-.bg-video{
-    position: absolute;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.title-page{
-    width: 100%;
-    height: 100vh;
-    align-content: center;
-    justify-items: center;
-    font-size: 35px;
-}
-.title-page > h1{
-    font-size: 70px;
-    z-index: 10000;
-}
-
-/* --- Code Navbar --- */
-.navbar {
+/* code navbar */
+.navbar{
+>>>>>>>>> Temporary merge branch 2
     position: fixed;
     padding: 10px 20px; 
     width: 100%;
@@ -91,6 +77,10 @@ g.man-beer{
     display: flex;
     justify-content: space-between; 
     align-items: center; 
+
+    /* background-color: gray transparent;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
 }
 
 /* Code Menu */
@@ -114,8 +104,46 @@ g.man-beer{
     transform: scale(1.1); 
 }
 
-/* NOUVELLE SECTION : AGENDA DES FESTIVALS */
+/* --- Cards (exemple) --- */
+.card {
+    width: 250px;
+    height: auto;
+    border: solid 2px black;
+    border-radius: 15px;
+    z-index: 100;
+    position: absolute;
+    padding: 15px; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+    
+    /*  POSITIONNEMENT  */
+    right: 50px; 
+    top: 150px;  
+    
+    /*  LISIBILITÉ  */
+    background-color: white; 
+}
 
+p.titre {
+=========
+    z-index: 10;
+    /* border: solid 1px red; */
+}
+
+p.titre{
+>>>>>>>>> Temporary merge branch 2
+    justify-self: center;
+    text-align: center;
+    margin: 15px 5px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+p.car-paragraphe {
+    text-align: justify;
+<<<<<<<<< Temporary merge branch 1
+    font-size: 17px;
+}
+/* NOUVELLE SECTION : AGENDA DES FESTIVALS */
 .section-titre {
     text-align: center;
     font-size: 55px; /* Un peu plus grand pour l'effet BD */
@@ -137,8 +165,7 @@ g.man-beer{
 
 /* La base de la carte Cartoon */
 .festival-card {
-    width: 320px; /* Une largeur fixe pour faire de belles "boîtes" */
-    background-color: white;
+    width: 320px; /* Une largeur fixe pour faire de belles "boîtes" */  
     border: 4px solid black; /* Bordure TRES épaisse façon Comic book */
     border-radius: 20px;     /* Bords bien arrondis */
     padding: 30px;
@@ -214,10 +241,8 @@ g.man-beer{
 /* SECTION LE SAVIEZ-VOUS ? (CARTOON)*/
 
 .saviez-vous {
-    background-color: white; 
     padding: 60px 20px 80px 20px; 
 }
-
 /* Le grand titre au centre */
 .section-titre {
     text-align: center;
@@ -252,14 +277,15 @@ g.man-beer{
     
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Effet quand on passe la souris sur une carte */
-.saviez-vous-card:hover {
-    transform: translateY(-8px) scale(1.02); 
-    box-shadow: 15px 15px 0px rgba(255, 196, 10, 1); 
-    z-index: 10;
+.saviez-vous-card:nth-child(1){
+    transform: rotate(4deg);
 }
-
+.saviez-vous-card:nth-child(2){
+    transform: rotate(-1deg) translateY(15px);
+}
+.saviez-vous-card:nth-child(3){
+    transform: rotate(-4deg) translateY(-15px);
+}
 /* Le gros chiffre jaune du record */
 .record-chiffre {
     font-size: 70px; 
