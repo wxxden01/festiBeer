@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Réservation Valence - FestiBeer</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-box">
+                <a href="../../index.html" style="text-decoration:none; color:inherit;"><h1 class="logo">FestiBeer</h1></a>
+            </div>
+            <div class="menu">
+                <a href="../index.html">Accueil</a>
+                <a href="festival_valence/index.html">retour</a>  
+                <a href="../compte/index.html">Compte</a>               
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <svg class="fond reverse2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 560">
+                <g fill="none" class="wave"> 
+                    <path d="M 0,464 C 57.6,393.6 172.8,108.8 288,112 C 403.2,115.2 460.8,473.6 576,480 C 691.2,486.4 748.8,182.8 864,144 C 979.2,105.2 1036.8,290.6 1152,286 C 1267.2,281.4 1382.4,154 1440,121L1440 560 L0 560 Z" stroke="none"/>
+                    <path d="M 0,464 C 57.6,393.6 172.8,108.8 288,112 C 403.2,115.2 460.8,473.6 576,480 C 691.2,486.4 748.8,182.8 864,144 C 979.2,105.2 1036.8,290.6 1152,286 C 1267.2,281.4 1382.4,154 1440,121L1440 560M0 464L0 560" stroke-linejoin="round" stroke-linecap="round"/>
+                </g>
+            </svg>
+
+            <div class="content" style="padding-bottom: 80px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; justify-content: center;">
+                    
+                    <div class="form-box">
+                        <h2 class="section-titre" style="margin-bottom: 30px; font-size: 2.5rem;">Je réserve !</h2>
+                        <form action="#">
+                            <label for="nom">Nom Complet</label>
+                            <input type="text" id="nom" name="nom" placeholder="Ex: Jean Bon" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="jean@mail.com" required>
+
+                            <label for="pass">Choisis ton option</label>
+                            <select id="pass" name="pass">
+                                <option value="classique">Entrée Classique + Éco-cup (7€)</option>
+                                <option value="vip">Pass Coupe-file + 2 Pintes (15€)</option>
+                            </select>
+
+                            <label for="pass">Choisis ton option</label>
+                            <select id="pass" name="pass">
+                                <option value="classique">resrever grenoble </option>
+                                <option value="classique">reserver Lyon</option>
+                                <option value="classique">reserver Valence</option>
+                            </select>
+
+                            <label for="nb">Nombre de places</label>
+                            <input type="number" id="nb" name="nb" min="1" value="1">
+
+                            <button type="submit" class="btn-reserver" style="width: 100%; font-size: 1.8rem; padding: 20px; margin-top: 20px;">
+                                Valider ma commande 🍺
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <footer style="padding: 20px; text-align: center; background-color: black; color: white;">
+        <p>© FestiBeer 2026 - L'abus d'alcool est dangereux pour la santé.</p>
+    </footer>
+</body>
+</html>
